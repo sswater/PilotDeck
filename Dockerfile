@@ -1,5 +1,5 @@
 # ── Stage 1: Builder ──────────────────────────────────────────────────
-FROM node:22-bookworm AS builder
+FROM rd.fuzik.cn:5443/ubuntu24-java21-node24-python3:v1 AS builder
 
 WORKDIR /build
 
@@ -41,7 +41,7 @@ RUN cd ui && npm run build
 
 
 # ── Stage 2: Runtime ─────────────────────────────────────────────────
-FROM node:22-bookworm-slim
+FROM rd.fuzik.cn:5443/ubuntu24-java21-node24-python3:v1
 
 WORKDIR /app
 
