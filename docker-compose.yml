@@ -13,6 +13,8 @@ services:
       # - ${PILOTDECK_CONFIG:-${HOME}/.pilotdeck/pilotdeck.yaml}:/root/.pilotdeck/pilotdeck.yaml:ro
       # Optional: expose a host workspace to agents running inside the container.
       # - ${PILOTDECK_WORKSPACE:-${PWD}}:/workspace
+      - ${HOME}/Documents:/home/Documents
+      - ${HOME}/Public:/home/Public
     environment:
       - NODE_ENV=production
       - PILOT_HOME=/root/.pilotdeck
